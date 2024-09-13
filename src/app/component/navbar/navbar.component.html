@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top z-1">
+    <div class="container-fluid w-100 d-flex justify-content-between">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img src="../../../assets/logo.svg" alt="Logo" style="height: 40px;"> <!-- Imposta la dimensione desiderata -->
+    </a> 
+        <div>
+          <a class="nav-link" target="_blank" href="https://www.instagram.com/enricogasparri1976/">
+            <i class="fab fa-instagram"></i>
+        </a>
+        </div>
+    
+        <div>
+          <a class="nav-link" href="javascript:void(0)" (click)="openMail()">
+            <i class="fas fa-envelope icon-azzurro"></i>
+          </a>
+        </div>
+        
+        <div>
+          <a class="nav-link" [routerLink]="['/catalogo']" style="font-size: 20px;">Catalogue</a> <!-- Naviga a ProductsComponent -->
+        </div>
+      
+    </div>
+  </nav>

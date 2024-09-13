@@ -1,0 +1,211 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: grid;
+  }
+  
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden; /* Assicura che il contenitore non causi overflow orizzontale */
+    overflow-y: hidden;
+  }
+  
+  
+  /* Altezza fissa per le immagini del carosello */
+  .carousel-image {
+    height: 650px; 
+    object-fit: cover; 
+    width: 100%; 
+  }
+  
+  /* Stili aggiuntivi per il carosello */
+  .carousel-item {
+    height: 100%; /* Assicura che gli elementi del carosello riempiano il contenitore */
+  }
+  
+  
+  .desktop-gallery {
+    display: none;
+  }
+  
+  // .mobile-gallery {
+  //   display: block;
+  // }
+  
+  @media (min-width: 768px) {
+    .desktop-gallery {
+      display: block;
+    }
+    .mobile-gallery {
+      display: none;
+    }
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  
+  .centered-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .centered-heading h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  button {
+    margin: 0 10px; /* Assicura che i bottoni siano centrati e non causino overflow */
+  }
+  
+  
+  
+  /* Stile delle immagini */
+  .gallery .card {
+    width: 200px; /* Larghezza fissa per ogni immagine */
+    border-radius: 8px; /* Bordo arrotondato */
+  }
+  
+  
+  @media (max-width: 425px) {
+    .gallery .card {
+        width: 100%; /* Larghezza completa dello schermo su dispositivi mobili */
+    }
+  }
+  
+  
+  
+  form {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-text {
+    color: #6c757d;
+  }
+  
+  h2 {
+    font-size: 35px;
+  }
+  
+  p {
+    font-size: 30px;
+  }
+  
+  h5 {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    p {
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 425px) {
+    p {
+      font-size: 18px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+     .text-center {
+        text-align: center !important;
+    }
+  }
+  
+  
+  
+  
+  .gallery {
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 0.8px;
+    height: 500px;
+    overflow: hidden;
+    transition: flex 0.3s ease-in-out;
+    flex: 1;
+  }
+  
+  .card img {
+    position: absolute; /* Per mantenere l'immagine centrata */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    flex: 3;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+    width: 100%;
+  }
+  
+  
+  
+  
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
