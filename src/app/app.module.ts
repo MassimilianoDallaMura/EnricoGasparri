@@ -7,6 +7,7 @@ import { ProductsComponent } from './component/products/products.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './component/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -44,7 +45,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-  
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

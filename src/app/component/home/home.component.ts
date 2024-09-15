@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     const message = (form.querySelector('#message') as HTMLTextAreaElement).value;
 
     // Costruisce il link mailto
-    const mailtoLink = `mailto:enricogasparri1976@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
+    const mailtoLink = `mailto:info@enricogasparri.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
 
     // Apre il client di posta elettronica
     window.location.href = mailtoLink;

@@ -7,7 +7,7 @@
   </div>
 
   <!-- Contenuto del componente -->
-  <div *ngIf="!isLoading" style="padding-bottom: 50px;">
+  <div *ngIf="!isLoading" style="padding-bottom: 120px;">
     <h2 style="text-transform: uppercase; text-align: center;">Catalogo</h2>
     <div class="row">
       <div class="col-12 d-flex flex-wrap">
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <!-- Modale per mostrare il quadreo selezionato -->
+    <!-- modale -->
   <div *ngIf="selectedQuadro || isModalLoading" class="modal" (click)="deselectQuadro()">
     <div class="modal-content">
       <div *ngIf="isModalLoading" class="spinner-overlay">
@@ -35,11 +35,32 @@
       </div>
       <div *ngIf="!isModalLoading">
         <img [src]="selectedQuadro?.src" [alt]="selectedQuadro?.title">
-        <h3>{{selectedQuadro?.title}}</h3> 
+        <h3 style="margin-top: 10px;">{{selectedQuadro?.title}}</h3> 
         <h4>{{selectedQuadro?.collection}}</h4>
         <h5>{{selectedQuadro?.description}}</h5>
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-md-8 col-lg-8">
+            <div class="input-group"  (click)="$event.stopPropagation()">
+              <input type="email" class="form-control" placeholder="Write here your email" [(ngModel)]="email" required>
+              <a [href]="send()" 
+                 class="btn btn-primary"
+                 [ngClass]="{'disabled': !email || !selectedQuadro}"
+                 [attr.aria-disabled]="!email || !selectedQuadro ? true : null"
+                 (click)="!email || !selectedQuadro ? $event.preventDefault() : null">
+                <i class="fa fa-envelope"></i>
+                Send Email
+              </a>
+            </div>
+            <p id="" class="form-text"  style="color: white; margin: 0; margin-top: 5px; text-align: start;">By sending the email, you agree to the processing of personal data</p>
+              <p id="" class="form-text" style="color: white; margin: 0; text-align: start;">It will not be shared with anyone</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  
 
+
+
+
+</div>

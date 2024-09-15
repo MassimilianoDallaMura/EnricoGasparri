@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   openMail() {
-    window.location.href = 'mailto:enricogasparri1976@gmail.com';
+    window.location.href = 'mailto:info@enricogasparri.com';
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   isLoading = true;
-  isModalLoading = false; // Nuova proprietà per lo stato di caricamento della modale
+  isModalLoading = false; 
+  email: string = '';
+
 
 
   quadri: { src: string, title: string, description: string, collection: string, venduto: boolean}[] = [
@@ -112,13 +114,26 @@ export class ProductsComponent implements OnInit {
   async selectQuadro(quadro: { src: string, title: string, description: string, collection: string }): Promise<void> {
     this.isModalLoading = true; // Mostra lo spinner
     this.selectedQuadro = null; // Assicura che la modale sia vuota mentre carica
-    await this.loadImage(quadro.src); // Attendi il caricamento dell'immagine
+    await this.loadImage(quadro.src); // Attende il caricamento dell'immagine
     this.selectedQuadro = quadro; // Imposta il quadro selezionato
-    this.isModalLoading = false; // Nascondi lo spinner
+    this.isModalLoading = false; // Nasconde lo spinner
   }
 
 
   deselectQuadro(): void {
     this.selectedQuadro = null;
+  }
+  
+
+  send(): string {
+    if (!this.selectedQuadro || !this.email) {
+      return ''; // Ritorna una stringa vuota se non ci sono valori
+    }
+    
+    const title = encodeURIComponent(this.selectedQuadro.title);
+    const collection = encodeURIComponent(this.selectedQuadro.collection);
+    const emailBody = `Title: ${title}%0ACollection: ${collection}%0AEmail: ${this.email}`;
+    
+    return `mailto:info@enricogasparri.com?subject=Quadro%20Info&body=${emailBody}`;
   }
 }
