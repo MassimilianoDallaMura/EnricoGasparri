@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
   isLoading = true;
   isModalLoading = false; 
-  email: string = '';
+  message: string = '';
 
 
 
@@ -126,14 +126,14 @@ export class ProductsComponent implements OnInit {
   
 
   send(): string {
-    if (!this.selectedQuadro || !this.email) {
+    if (!this.selectedQuadro || !this.message) {
       return ''; // Ritorna una stringa vuota se non ci sono valori
     }
     
     const title = encodeURIComponent(this.selectedQuadro.title);
     const collection = encodeURIComponent(this.selectedQuadro.collection);
-    const emailBody = `Title: ${title}%0ACollection: ${collection}%0AEmail: ${this.email}`;
+    const messageBody = `Title: ${title}%0ACollection: ${collection}%0AMessage: ${this.message}`;
     
-    return `mailto:info@enricogasparri.com?subject=Quadro%20Info&body=${emailBody}`;
+    return `mailto:info@enricogasparri.com?subject=Quadro%20Info&body=${messageBody}`;
   }
 }

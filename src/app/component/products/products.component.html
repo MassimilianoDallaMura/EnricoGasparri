@@ -41,18 +41,18 @@
         <div class="row justify-content-center mt-4">
           <div class="col-12 col-md-8 col-lg-8">
             <div class="input-group"  (click)="$event.stopPropagation()">
-              <input type="email" class="form-control" placeholder="Write here your email" [(ngModel)]="email" required>
+              <input type="text" class="form-control" placeholder="Write message" [(ngModel)]="message" required>
               <a [href]="send()" 
                  class="btn btn-primary"
-                 [ngClass]="{'disabled': !email || !selectedQuadro}"
-                 [attr.aria-disabled]="!email || !selectedQuadro ? true : null"
-                 (click)="!email || !selectedQuadro ? $event.preventDefault() : null">
+                 [ngClass]="{'disabled': !message || !selectedQuadro}"
+                 [attr.aria-disabled]="!message || !selectedQuadro ? true : null"
+                 (click)="!message || !selectedQuadro ? $event.preventDefault() : null">
                 <i class="fa fa-envelope"></i>
-                Send Email
+                Send email
               </a>
             </div>
-            <p id="" class="form-text"  style="color: white; margin: 0; margin-top: 5px; text-align: start;">By sending the email, you agree to the processing of personal data</p>
-              <p id="" class="form-text" style="color: white; margin: 0; text-align: start;">It will not be shared with anyone</p>
+            <p id="" class="form-text"  style="color: white; margin: 0; margin-top: 5px; text-align: start;">By sending the message, you agree to the processing of personal data</p>
+              <p id="" class="form-text" style="color: white; margin: 0; text-align: start;">Your emai will not be shared with anyone</p>
           </div>
         </div>
       </div>
